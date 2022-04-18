@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  @apply h-full w-full overflow-hidden;
+}
+
+/* text-gray-200 */
+/* primary bg-[#202124] */
+/* secondary border-gray-600 */
+/* yellow #41331c */
+.app {
+  @apply bg-[#202124] text-gray-200 h-full;
+}
+.labels {
+  @apply px-6 py-4 font-semibold rounded-r-full cursor-pointer;
+}
+.labels:hover {
+  @apply bg-[#28292c];
+}
+.labels:hover .label-icon {
+  @apply hidden;
+}
+.labels:hover .label-delete {
+  @apply block;
+}
+.label-active {
+  background-color: #41331c !important;
+}
+
+.labels input:focus {
+  @apply border-b;
+}
+
+.grid-item {
+  @apply w-[240px] border border-gray-600 p-4 font-medium rounded-xl m-1 cursor-pointer;
+}
+.hmax {
+  height: 100% !important;
+}
+
+.home {
+  @apply flex flex-col h-full;
+}
+.main {
+  @apply relative grow flex h-full;
+}
+.addnote input:nth-child(1) {
+  @apply hidden;
+}
+.addnote:focus-within input,
+.addnote:focus-within div {
+  @apply block;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: 20px; /* gutter size offset */
+  /* width: auto; */
+}
+.my-masonry-grid_column {
+  /* padding-left: 20px; gutter size */
+  background-clip: padding-box;
+  width: 250px !important;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  /* background: grey;
+    margin-bottom: 30px; */
+  @apply relative w-[240px] border break-words border-gray-500 p-4 pb-0 font-medium rounded-md mr-7 mb-4 min-h-[100px];
+}
+
+.my-masonry-grid_column > div:hover .iconshow {
+  @apply flex;
+}
+
+.title {
+  @apply font-semibold break-words mb-2 text-sm;
+}
+.content {
+  @apply text-sm whitespace-pre-wrap;
+  /* white-space: initial; */
+}
+
+.auth-card input:not([type="submit"]) {
+  @apply p-5 m-2 rounded-lg bg-inherit border border-gray-600 w-full h-12;
+}
+.submitBtn {
+  background-color: #ffbb00dc;
+  @apply my-6 w-full p-3 cursor-pointer mt-3 rounded-lg;
+}
+.submitBtn:hover {
+  @apply opacity-80;
+}
+
+.option-container {
+  @apply text-base text-gray-400 absolute left-0 right-0 bottom-0 px-3 pb-2 flex justify-end;
+}
+
+.note:hover .option-icon {
+  @apply opacity-100;
+}
+
+.option-icon {
+  @apply cursor-pointer opacity-0 transition-opacity duration-200 rounded-full;
+}
+
+.option-content {
+  @apply flex absolute z-20 rounded-md p-2 text-white w-24 right-0 flex-col  text-xs bg-[#202124];
+  box-shadow: 1px 1px 5px #000;
+}
+
+.option-content div {
+  @apply p-1 cursor-pointer;
+}
